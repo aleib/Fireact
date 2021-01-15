@@ -1,14 +1,14 @@
-import firebase from 'firebase/app';
-import 'firebase/messaging';
+import firebase from "firebase/app";
+import "firebase/messaging";
 
 const config = {
-  apiKey: 'AIzaSyD6n58WMRzrcXxMnDGvzttxk4lqNu0MZbI',
-  authDomain: 'push-notifications-article.firebaseapp.com',
-  databaseURL: 'https://push-notifications-article.firebaseio.com',
-  projectId: 'push-notifications-article',
-  storageBucket: 'push-notifications-article.appspot.com',
-  messagingSenderId: '607164875245',
-  appId: '1:607164875245:web:ac22e68ecfd336b8ad67e4',
+  apiKey: "AIzaSyDDAXqyX8BWow3Whb1JlB02YWa0cf-TrEk",
+  authDomain: "react-firebase-push-ef492.firebaseapp.com",
+  projectId: "react-firebase-push-ef492",
+  storageBucket: "react-firebase-push-ef492.appspot.com",
+  messagingSenderId: "923411168527",
+  appId: "1:923411168527:web:b4a0b85f58f5a8806a927a",
+  measurementId: "G-X5J49PETY5",
 };
 
 firebase.initializeApp(config);
@@ -18,8 +18,7 @@ const messaging = firebase.messaging();
 export const requestFirebaseNotificationPermission = () =>
   new Promise((resolve, reject) => {
     messaging
-      .requestPermission()
-      .then(() => messaging.getToken())
+      .getToken()
       .then((firebaseToken) => {
         resolve(firebaseToken);
       })
